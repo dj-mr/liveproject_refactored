@@ -1,11 +1,13 @@
 package com.laurentiuspilca.liveproject.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Data
 public class Authority {
 
   @Id
@@ -16,30 +18,6 @@ public class Authority {
   @ManyToOne
   @JsonIgnore
   private User user;
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public User getUser() {
-    return user;
-  }
-
-  public void setUser(User user) {
-    this.user = user;
-  }
 
   @Override
   public boolean equals(Object o) {

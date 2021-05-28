@@ -1,11 +1,13 @@
 package com.laurentiuspilca.liveproject.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Data
 @Table(name = "client_grant_types")
 public class ClientGrantType {
 
@@ -19,30 +21,6 @@ public class ClientGrantType {
   @ManyToOne
   @JsonIgnore
   private Client client;
-
-  public int getId() {
-    return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  public String getGrantType() {
-    return grantType;
-  }
-
-  public void setGrantType(String grantType) {
-    this.grantType = grantType;
-  }
-
-  public Client getClient() {
-    return client;
-  }
-
-  public void setClient(Client client) {
-    this.client = client;
-  }
 
   @Override
   public boolean equals(Object o) {
